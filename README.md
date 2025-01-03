@@ -54,12 +54,12 @@ Define transaction details using the `PaymentRequest` object:
 $request = new PaymentRequest();
 $request->amount = 100; // Transaction amount
 $request->currency = 'XOF'; // Transaction currency
-$request->description = 'Iphone payment';
+$request->country = 'BF'; // Transaction country
 $request->order_id = 'ORDER123'; // Unique order ID
 $request->reference_id = 'ref-tfp-bf'; // Reference ID
-$request->country = 'BF'; // Transaction country
 $request->company = "WIKI BI Test"; // Company initiating the transaction
 $request->checkout_name = "Voiture"; // Checkout page title
+$request->description = 'Iphone payment'; // Description of your item
 $request->notify_url = 'https://example.com/notification_url'; // Notification URL
 $request->return_url = 'https://example.com/success'; // Success URL (optional)
 $request->cancel_url = 'https://example.com/cancel'; // Cancel URL (optional)
