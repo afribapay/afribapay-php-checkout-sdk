@@ -1,7 +1,7 @@
 # AfribaPay PHP WebCheckout SDK Documentation
 
 ## Introduction
-The **AfribaPay PHP WebCheckout SDK** enables developers to integrate AfribaPay's payment gateway seamlessly into their applications. It simplifies payment initialization, checkout button generation, and response handling while supporting multiple currencies and countries.
+The **AfribaPay PHP WebCheckout SDK** enables developers to integrate AfribaPay's webcheckout payment gateway seamlessly into their applications. It simplifies payment initialization, checkout button generation, and response handling while supporting multiple currencies and countries.
 
 Refer to the official documentation for further details: [AfribaPay Documentation](https://docs.afribapay.com).
 
@@ -116,7 +116,7 @@ try {
     $request->amount = 100;
     $request->currency = 'XOF';
     $request->country = 'BF';
-    $request->order_id = 'ORDER123';
+    $request->order_id = 'ORDER123'.time();
     $request->reference_id = 'ref-tfp-bf';
     $request->company = "WIKI BI Test";
     $request->checkout_name = "Voiture";
@@ -171,17 +171,14 @@ The SDK supports payments in the following countries:
 |--------------|---------------|---------------------|
 | **BJ**       | XOF           | Benin               |
 | **BF**       | XOF           | Burkina Faso        |
-| **CI**       | XOF           | Côte d’Ivoire      |
-| **GW**       | XOF           | Guinea-Bissau       |
+| **CI**       | XOF           | Côte d’Ivoire       |
 | **ML**       | XOF           | Mali                |
 | **NE**       | XOF           | Niger               |
 | **SN**       | XOF           | Senegal             |
 | **TG**       | XOF           | Togo                |
 | **CM**       | XAF           | Cameroon            |
 | **CF**       | XAF           | Central African Rep |
-| **TD**       | XAF           | Chad                |
 | **CG**       | XAF           | Republic of Congo   |
-| **GQ**       | XAF           | Equatorial Guinea   |
 | **GA**       | XAF           | Gabon               |
 | **CD**       | CDF           | DR Congo            |
 | **GN**       | GNF           | Guinea              |
@@ -213,12 +210,12 @@ The SDK supports payments in the following countries:
 |-------------------|---------|----------------------------------------------------------|
 | `amount`          | Float   | Payment amount                                           |
 | `currency`        | String  | Payment currency                                         |
-| `description`     | String  | Payment description                                      |
+| `country`         | String  | Country code for the transaction                        |
 | `order_id`         | String  | Unique order identifier                                  |
 | `reference_id`     | String  | Reference ID for reconciliation                         |
-| `country`         | String  | Country code for the transaction                        |
 | `company`         | String  | Name of the initiating company                          |
 | `checkout_name`    | String  | Title for the checkout page                             |
+| `description`     | String  | Payment description                                      |
 | `notify_url`      | String  | URL for payment status notifications                    |
 | `return_url`      | String  | URL to redirect users upon successful payment (optional)|
 | `cancel_url`      | String  | URL to redirect users upon payment cancellation (optional)|
