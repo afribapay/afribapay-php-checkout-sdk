@@ -76,7 +76,7 @@ function displayProducts($products) {
     $AfribaPayButton = new AfribaPaySDKClass(
         apiUser: 'pk_15fb8ccc-e2a8-4350-afad-acbf224f2e64', // API user identifier
         apiKey: 'sk_NA24xhNko7N96XJQZzBd337W33l5Ff5q4jSv1907m', // Secret API key for authentication
-        agentId: 'APM31923613', // Unique identifier for the agent
+        agent_id: 'APM31923613', // Unique identifier for the agent
         merchantKey: 'mk_Dv2c9Us240920061620', // Merchant-specific key for transactions
         environment: 'sandbox', // (production, or sandbox)
         lang: 'fr' // Language for the SDK interface (French in this case)
@@ -93,9 +93,9 @@ function displayProducts($products) {
         $request->amount = $product['price']; // Amount to be paid for the product
         $request->currency = $product['currency']; // Currency for the payment
         $request->description = $product['description']; // Description of the product
-        $request->orderId = $product['id']; // Unique order ID for the product
-        $request->referenceId = $product['reference_id']; // Reference ID, such as a serial number
-        $request->checkoutName = $product['item_name']; // Name of the product for the checkout interface
+        $request->order_id = $product['id']; // Unique order ID for the product
+        $request->reference_id = $product['reference_id']; // Reference ID, such as a serial number
+        $request->checkout_name = $product['item_name']; // Name of the product for the checkout interface
         $request->showCountries = true; // Enable display of countries during checkout
         $request->logo_url = 'https://static.cdnlogo.com/logos/i/80/internet-society.svg'; // Logo URL for the checkout page
 

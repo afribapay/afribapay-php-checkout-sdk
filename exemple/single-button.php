@@ -22,7 +22,7 @@ try {
         apiKey: 'sk_NA24xhNko7N96XJQZzBd337W33l5Ff5q4jSv1907m',
         
         // The unique identifier for the agent, used to track transactions or activities.
-        agentId: 'APM31923613',
+        agent_id: 'APM31923613',
         
         // The merchant key, specific to the account of the merchant using the API.
         merchantKey: 'mk_Dv2c9Us240920061620',
@@ -47,10 +47,10 @@ try {
     $request->description = 'Iphone payment';
     
     // Set the unique order ID to track the payment.
-    $request->orderId = 'ORDER123';
+    $request->order_id = 'ORDER123';
     
     // Provide a reference ID for the transaction, useful for reconciliation.
-    $request->referenceId = 'ref-tfp-bf';
+    $request->reference_id = 'ref-tfp-bf';
     
     // Specify the country code for the transaction, based on the currency:
     // XOF - West African CFA franc (BJ - Benin, BF - Burkina Faso, CI - Côte d'Ivoire, GW - Guinea-Bissau, ML - Mali, NE - Niger, SN - Senegal, TG - Togo).
@@ -69,7 +69,7 @@ try {
     $request->company = "WIKI BI Test";
     
     // Set the checkout name that appears on the payment page.
-    $request->checkoutName = "Voiture";
+    $request->checkout_name = "Voiture";
     
     // Specify the URL for notifications about the payment status.
     $request->notify_url = 'https://example.com/notification_url';

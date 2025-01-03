@@ -40,7 +40,7 @@ Use the `AfribaPaySDKClass` to set up API credentials:
 $AfribaPayButton = new AfribaPaySDKClass(
     apiUser: 'your_api_user',
     apiKey: 'your_secret_key',
-    agentId: 'your_agent_id',
+    agent_id: 'your_agent_id',
     merchantKey: 'your_merchant_key',
     environment: 'sandbox', // or 'production'
     lang: 'fr' // Language for API responses ('fr', 'en', etc.)
@@ -55,11 +55,11 @@ $request = new PaymentRequest();
 $request->amount = 100; // Transaction amount
 $request->currency = 'XOF'; // Transaction currency
 $request->description = 'Iphone payment';
-$request->orderId = 'ORDER123'; // Unique order ID
-$request->referenceId = 'ref-tfp-bf'; // Reference ID
+$request->order_id = 'ORDER123'; // Unique order ID
+$request->reference_id = 'ref-tfp-bf'; // Reference ID
 $request->country = 'BF'; // Transaction country
 $request->company = "WIKI BI Test"; // Company initiating the transaction
-$request->checkoutName = "Voiture"; // Checkout page title
+$request->checkout_name = "Voiture"; // Checkout page title
 $request->notify_url = 'https://example.com/notification_url'; // Notification URL
 $request->return_url = 'https://example.com/success'; // Success URL (optional)
 $request->cancel_url = 'https://example.com/cancel'; // Cancel URL (optional)
@@ -106,7 +106,7 @@ try {
     $AfribaPayButton = new AfribaPaySDKClass(
         apiUser: 'pk_15fb8ccc-e2a8-4350-afad-acbf224f2e64',
         apiKey: 'sk_NA24xhNko7N96XJQZzBd337W33l5Ff5q4jSv1907m',
-        agentId: 'APM31923613',
+        agent_id: 'APM31923613',
         merchantKey: 'mk_Dv2c9Us240920061620',
         environment: 'sandbox',
         lang: 'fr'
@@ -116,11 +116,11 @@ try {
     $request->amount = 100;
     $request->currency = 'XOF';
     $request->description = 'Iphone payment';
-    $request->orderId = 'ORDER123';
-    $request->referenceId = 'ref-tfp-bf';
+    $request->order_id = 'ORDER123';
+    $request->reference_id = 'ref-tfp-bf';
     $request->country = 'BF';
     $request->company = "WIKI BI Test";
-    $request->checkoutName = "Voiture";
+    $request->checkout_name = "Voiture";
     $request->notify_url = 'https://example.com/notification_url';
     $request->return_url = 'https://example.com/success';
     $request->cancel_url = 'https://example.com/cancel';
@@ -202,7 +202,7 @@ The SDK supports payments in the following countries:
 |-----------------|--------|-------------------------------------------------------|
 | `apiUser`       | String | User identifier for the API                          |
 | `apiKey`        | String | Secret key for authentication                        |
-| `agentId`       | String | Unique identifier for the agent                     |
+| `agent_id`       | String | Unique identifier for the agent                     |
 | `merchantKey`   | String | Specific key for the merchant account               |
 | `environment`   | String | 'sandbox' or 'production' for API environment       |
 | `lang`          | String | Response language ('en', 'fr', etc.)                |
@@ -214,11 +214,11 @@ The SDK supports payments in the following countries:
 | `amount`          | Float   | Payment amount                                           |
 | `currency`        | String  | Payment currency                                         |
 | `description`     | String  | Payment description                                      |
-| `orderId`         | String  | Unique order identifier                                  |
-| `referenceId`     | String  | Reference ID for reconciliation                         |
+| `order_id`         | String  | Unique order identifier                                  |
+| `reference_id`     | String  | Reference ID for reconciliation                         |
 | `country`         | String  | Country code for the transaction                        |
 | `company`         | String  | Name of the initiating company                          |
-| `checkoutName`    | String  | Title for the checkout page                             |
+| `checkout_name`    | String  | Title for the checkout page                             |
 | `notify_url`      | String  | URL for payment status notifications                    |
 | `return_url`      | String  | URL to redirect users upon successful payment (optional)|
 | `cancel_url`      | String  | URL to redirect users upon payment cancellation (optional)|

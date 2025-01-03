@@ -10,12 +10,12 @@ if (file_exists($sdkPath)) {
 } else {
     die("The SDK file was not found at the specified location : " . $sdkPath);
 }
-    function createButton($amount, $currency, $description, $orderId, $referenceId, $country, $company, $checkoutName) {
+    function createButton($amount, $currency, $description, $order_id, $reference_id, $country, $company, $checkout_name) {
         // Instantiate the AfribaPay SDK class with required configuration parameters
         $AfribaPayButton = new AfribaPaySDKClass(
             apiUser: 'pk_15fb8ccc-e2a8-4350-afad-acbf224f2e64', // Public API user identifier
             apiKey: 'sk_NA24xhNko7N96XJQZzBd337W33l5Ff5q4jSv1907m', // Secret API key for authentication
-            agentId: 'APM31923613', // Unique agent identifier
+            agent_id: 'APM31923613', // Unique agent identifier
             merchantKey: 'mk_Dv2c9Us240920061620', // Merchant-specific key for transactions
             environment: 'sandbox', // Operating environment ('sandbox' for testing, 'production' for live transactions)
             lang: 'fr' // Language for the SDK interface (French)
@@ -32,11 +32,11 @@ if (file_exists($sdkPath)) {
         $request->amount = $amount; // Payment amount
         $request->currency = $currency; // Payment currency
         $request->description = $description; // Description of the transaction
-        $request->orderId = $orderId; // Unique order ID for tracking
-        $request->referenceId = $referenceId; // Unique reference ID for the transaction
+        $request->order_id = $order_id; // Unique order ID for tracking
+        $request->reference_id = $reference_id; // Unique reference ID for the transaction
         $request->country = $country; // Country code for the transaction (e.g., 'BF' for Burkina Faso)
         $request->company = $company; // Company name initiating the transaction
-        $request->checkoutName = $checkoutName; // Name displayed during checkout
+        $request->checkout_name = $checkout_name; // Name displayed during checkout
         $request->logo_url = 'https://static.cdnlogo.com/logos/i/80/internet-society.svg'; // Logo URL for the payment page
     
         // Generate and return the AfribaPay checkout button HTML
@@ -51,11 +51,11 @@ try {
         amount: 75000, // Payment amount in the specified currency
         currency: 'XOF', // Currency code (e.g., West African CFA franc)
         description: 'Changan car payment', // Description of the transaction
-        orderId: 'ORDER123', // Unique order ID
-        referenceId: 'ref-tfp-bf', // Reference ID for the transaction
+        order_id: 'ORDER123', // Unique order ID
+        reference_id: 'ref-tfp-bf', // Reference ID for the transaction
         country: 'BF', // Country code (e.g., 'BF' for Burkina Faso)
         company: 'WIKI BI Test', // Name of the company initiating the transaction
-        checkoutName: 'Voiture' // Checkout name displayed on the payment page
+        checkout_name: 'Voiture' // Checkout name displayed on the payment page
     );
 
 } catch (AfribaPayException $e) {
