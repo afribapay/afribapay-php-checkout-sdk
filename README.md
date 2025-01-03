@@ -1,7 +1,7 @@
-# AfribaPay PHP SDK Documentation
+# AfribaPay PHP WebCheckout SDK Documentation
 
 ## Introduction
-The **AfribaPay PHP SDK** enables developers to integrate AfribaPay's payment gateway seamlessly into their applications. It simplifies payment initialization, checkout button generation, and response handling while supporting multiple currencies and countries.
+The **AfribaPay PHP WebCheckout SDK** enables developers to integrate AfribaPay's payment gateway seamlessly into their applications. It simplifies payment initialization, checkout button generation, and response handling while supporting multiple currencies and countries.
 
 Refer to the official documentation for further details: [AfribaPay Documentation](https://docs.afribapay.com).
 
