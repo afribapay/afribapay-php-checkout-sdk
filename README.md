@@ -115,12 +115,12 @@ try {
     $request = new PaymentRequest();
     $request->amount = 100;
     $request->currency = 'XOF';
-    $request->description = 'Iphone payment';
+    $request->country = 'BF';
     $request->order_id = 'ORDER123';
     $request->reference_id = 'ref-tfp-bf';
-    $request->country = 'BF';
     $request->company = "WIKI BI Test";
     $request->checkout_name = "Voiture";
+    $request->description = 'Iphone payment';
     $request->notify_url = 'https://example.com/notification_url';
     $request->return_url = 'https://example.com/success';
     $request->cancel_url = 'https://example.com/cancel';

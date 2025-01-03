@@ -42,15 +42,6 @@ try {
     
     // Define the currency for the payment (e.g., XOF - West African CFA franc, XAF - Central African CFA franc, CDF - Congolese Franc, GNF - Guinean Franc, KES - Kenyan Shilling, MWK - Malawian Kwacha, RWF - Rwandan Franc, SLE - Sierra Leonean Leone, UGX - Ugandan Shilling, ZMW - Zambian Kwacha).
     $request->currency = 'XOF';
-
-    // Add a description for the payment, which will appear on the payment interface.
-    $request->description = 'Iphone payment';
-    
-    // Set the unique order ID to track the payment.
-    $request->order_id = 'ORDER123';
-    
-    // Provide a reference ID for the transaction, useful for reconciliation.
-    $request->reference_id = 'ref-tfp-bf';
     
     // Specify the country code for the transaction, based on the currency:
     // XOF - West African CFA franc (BJ - Benin, BF - Burkina Faso, CI - Côte d'Ivoire, GW - Guinea-Bissau, ML - Mali, NE - Niger, SN - Senegal, TG - Togo).
@@ -64,12 +55,21 @@ try {
     // UGX - Ugandan Shilling (UG - Uganda).
     // ZMW - Zambian Kwacha (ZM - Zambia).
     $request->country = 'BF';
+     
+    // Set the unique order ID to track the payment.
+    $request->order_id = 'ORDER123';
+    
+    // Provide a reference ID for the transaction, useful for reconciliation.
+    $request->reference_id = 'ref-tfp-bf';
+   
+    // Set the checkout name that appears on the payment page.
+    $request->checkout_name = "Voiture";
+
+    // Add a description for the payment, which will appear on the payment interface.
+    $request->description = 'Iphone payment';
     
     // Define the company name initiating the transaction.
     $request->company = "WIKI BI Test";
-    
-    // Set the checkout name that appears on the payment page.
-    $request->checkout_name = "Voiture";
     
     // Specify the URL for notifications about the payment status.
     $request->notify_url = 'https://example.com/notification_url';

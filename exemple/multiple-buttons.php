@@ -85,17 +85,17 @@ function displayProducts($products) {
     // Iterate over the list of products to generate payment buttons for each
     foreach ($products as $product) {
         // Prepare the payment request with product-specific details
-        $request = new PaymentRequest();
-        $request->notify_url = 'https://example.com/notification_url'; // URL for payment notifications
-        $request->return_url = 'https://example.com/success'; // URL to redirect upon successful payment
-        $request->cancel_url = 'https://example.com/cancel'; // URL to redirect if payment is canceled
-        $request->company = 'TechShop Inc'; // Name of the company initiating the transaction
+        $request = new PaymentRequest();        
         $request->amount = $product['price']; // Amount to be paid for the product
-        $request->currency = $product['currency']; // Currency for the payment
-        $request->description = $product['description']; // Description of the product
+        $request->currency = $product['currency']; // Currency for the payment        
         $request->order_id = $product['id']; // Unique order ID for the product
         $request->reference_id = $product['reference_id']; // Reference ID, such as a serial number
         $request->checkout_name = $product['item_name']; // Name of the product for the checkout interface
+        $request->company = 'TechShop Inc'; // Name of the company initiating the transaction
+        $request->description = $product['description']; // Description of the product
+        $request->notify_url = 'https://example.com/notification_url'; // URL for payment notifications
+        $request->return_url = 'https://example.com/success'; // URL to redirect upon successful payment
+        $request->cancel_url = 'https://example.com/cancel'; // URL to redirect if payment is canceled
         $request->showCountries = true; // Enable display of countries during checkout
         $request->logo_url = 'https://static.cdnlogo.com/logos/i/80/internet-society.svg'; // Logo URL for the checkout page
 

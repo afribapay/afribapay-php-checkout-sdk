@@ -23,26 +23,25 @@ if (file_exists($sdkPath)) {
     
         // Create a new payment request with the provided details
         $request = new PaymentRequest();
+    
+        // Set the payment details
+        $request->amount = $amount; // Payment amount
+        $request->currency = $currency; // Payment currency
+        $request->country = $country; // Country code for the transaction (e.g., 'BF' for Burkina Faso)       
+        $request->order_id = $order_id; // Unique order ID for tracking
+        $request->reference_id = $reference_id; // Unique reference ID for the transaction      
+        $request->company = $company; // Company name initiating the transaction
+        $request->checkout_name = $checkout_name; // Name displayed during checkout
+        $request->description = $description; // Description of the transaction
+        $request->logo_url = 'https://static.cdnlogo.com/logos/i/80/internet-society.svg'; // Logo URL for the payment page
         $request->notify_url = 'https://example.com/notification_url'; // URL for payment notifications
         $request->return_url = 'https://example.com/success'; // URL to redirect upon successful payment
         $request->cancel_url = 'https://example.com/cancel'; // URL to redirect if payment is canceled
         $request->showCountries = true; // Display available countries during checkout
     
-        // Set the payment details
-        $request->amount = $amount; // Payment amount
-        $request->currency = $currency; // Payment currency
-        $request->description = $description; // Description of the transaction
-        $request->order_id = $order_id; // Unique order ID for tracking
-        $request->reference_id = $reference_id; // Unique reference ID for the transaction
-        $request->country = $country; // Country code for the transaction (e.g., 'BF' for Burkina Faso)
-        $request->company = $company; // Company name initiating the transaction
-        $request->checkout_name = $checkout_name; // Name displayed during checkout
-        $request->logo_url = 'https://static.cdnlogo.com/logos/i/80/internet-society.svg'; // Logo URL for the payment page
-    
         // Generate and return the AfribaPay checkout button HTML
         return $AfribaPayButton->createCheckoutButton($request, 'Payer maintenant', '#7973FF', 'large');
     }
-    
     
 try {
 
@@ -50,12 +49,12 @@ try {
     echo createButton(
         amount: 75000, // Payment amount in the specified currency
         currency: 'XOF', // Currency code (e.g., West African CFA franc)
-        description: 'Changan car payment', // Description of the transaction
+        country: 'BF', // Country code (e.g., 'BF' for Burkina Faso)
         order_id: 'ORDER123', // Unique order ID
         reference_id: 'ref-tfp-bf', // Reference ID for the transaction
-        country: 'BF', // Country code (e.g., 'BF' for Burkina Faso)
-        company: 'WIKI BI Test', // Name of the company initiating the transaction
-        checkout_name: 'Voiture' // Checkout name displayed on the payment page
+        checkout_name: 'Voiture', // Checkout name displayed on the payment page
+        company: 'WIKI BI Test', // Name of the company initiating the transaction        
+        description: 'Changan car payment' // Description of the transaction
     );
 
 } catch (AfribaPayException $e) {
