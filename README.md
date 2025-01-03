@@ -43,7 +43,7 @@ $AfribaPayButton = new AfribaPaySDKClass(
     agentId: 'your_agent_id',
     merchantKey: 'your_merchant_key',
     environment: 'sandbox', // or 'production'
-    lang: 'fr' // Language for API responses ('fr' or 'en')
+    lang: 'fr' // Language for API responses ('fr', 'en', etc.)
 );
 ```
 
@@ -87,6 +87,55 @@ The SDK provides structured error handling for better debugging:
 ```php
 try {
     // Payment logic here
+} catch (AfribaPayException $e) {
+    echo "AfribaPayException: " . $e->getMessage();
+} catch (Exception $e) {
+    echo "UnknownException: " . $e->getMessage();
+}
+```
+
+---
+
+## Full PHP Example
+
+```php
+<?php
+require 'path_to_sdk/afribapay.sdk.php';
+
+try {
+    $AfribaPayButton = new AfribaPaySDKClass(
+        apiUser: 'pk_15fb8ccc-e2a8-4350-afad-acbf224f2e64',
+        apiKey: 'sk_NA24xhNko7N96XJQZzBd337W33l5Ff5q4jSv1907m',
+        agentId: 'APM31923613',
+        merchantKey: 'mk_Dv2c9Us240920061620',
+        environment: 'sandbox',
+        lang: 'fr'
+    );
+
+    $request = new PaymentRequest();
+    $request->amount = 100;
+    $request->currency = 'XOF';
+    $request->description = 'Iphone payment';
+    $request->orderId = 'ORDER123';
+    $request->referenceId = 'ref-tfp-bf';
+    $request->country = 'BF';
+    $request->company = "WIKI BI Test";
+    $request->checkoutName = "Voiture";
+    $request->notify_url = 'https://example.com/notification_url';
+    $request->return_url = 'https://example.com/success';
+    $request->cancel_url = 'https://example.com/cancel';
+    $request->logo_url = 'https://static.cdnlogo.com/logos/i/80/internet-society.svg';
+    $request->showCountries = true;
+
+    $buttonHtml = $AfribaPayButton->createCheckoutButton(
+        $request,
+        'Payer maintenant',
+        '#FF5733',
+        'large'
+    );
+
+    echo $buttonHtml;
+
 } catch (AfribaPayException $e) {
     echo "AfribaPayException: " . $e->getMessage();
 } catch (Exception $e) {
